@@ -36,6 +36,7 @@ def run_game() -> None:
         game_over = game_event()
 
         screen_refresh(screen, snake_head)
+#Se cierran los eventos
 pygame.quit()
 
 if __name__ == '__main__':
