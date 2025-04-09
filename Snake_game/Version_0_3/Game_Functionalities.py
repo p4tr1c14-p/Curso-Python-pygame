@@ -2,7 +2,7 @@ import pygame
 from Configuration import Configurations
 from Snake  import  SnakeBlock
 
-def game_event() -> None:
+def game_event() -> bool:
     """
     Función que administra ñps eneventos del juego
     retrun: La bandera del fin del juego
