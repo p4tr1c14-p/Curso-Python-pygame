@@ -1,15 +1,12 @@
 """
 Nombre: Patricia Pérez Cruz
 Fecha: 08/04/2025
-Version 02:
--Se agregó la clase Configurations en el módulo Configurations.py que va a incluir todas las
-configuraciones del juego
--Se agregó el módul Game funcine que admiistra los eve
--Se agregaa
+Version 08:
+-Se verifican coliciones
 """
 import pygame
 from Configuration import Configurations
-from Game_Functionalities import game_event, screen_refresh, snake_movement
+from Game_Functionalities import game_event, screen_refresh, snake_movement, check_collision
 from Snake import  SnakeBlock
 from pygame.sprite import Group
 from Apple import Apple
@@ -56,6 +53,9 @@ def run_game() -> None:
 
         #Se administra el movimiento de la serpiente
         snake_movement(snake_body)
+
+        #Se revisan las coliciones en el juego
+        game_over = check_collision(screen, snake_body, apples)
 
         #Se dibujan los elementos gráficos en la pantalla
         screen_refresh(screen, clock, snake_body, apples)
