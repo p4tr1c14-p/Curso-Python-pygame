@@ -6,7 +6,7 @@ Version 08:
 """
 import pygame
 from Configuration import Configurations
-from Game_Functionalities import game_event, screen_refresh, snake_movement, check_collision
+from Game_Functionalities import game_event, screen_refresh, snake_movement, check_collision, game_over_screen
 from Snake import  SnakeBlock
 from pygame.sprite import Group
 from Apple import Apple
@@ -49,19 +49,28 @@ def run_game() -> None:
     game_over = False
 
     while not game_over:
-        game_over = game_event(snake_body, apples)
+            game_over = game_event()
+            #Condición de que cerró la ventaa
+            if game_over:
+                break
 
-        #Se administra el movimiento de la serpiente
-        snake_movement(snake_body)
+            #Se administra el movimiento de la serpiente
+            snake_movement(snake_body)
 
-        #Se revisan las coliciones en el juego
-        game_over = check_collision(screen, snake_body, apples)
+            #Se revisan las coliciones en el juego
+            game_over = check_collision(screen, snake_body, apples)
 
-        #Se dibujan los elementos gráficos en la pantalla
-        screen_refresh(screen, clock, snake_body, apples)
+            # Se dibujan los elementos gráficos en la pantalla
+            screen_refresh(screen, clock, snake_body, apples)
+
+            #Si ha perdido el jugador se llama a la pantalla del fin del juego
+            if game_over:
+                game_over_screen()
+
+
 
 #Se cierran los eventos
-pygame.quit()
+    pygame.quit()
 
 if __name__ == '__main__':
     run_game()
