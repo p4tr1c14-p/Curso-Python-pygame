@@ -15,10 +15,12 @@ class Apple(Sprite):
        #screen = pygame.display.set_mode(Configurations.get_screen_size())
 
         #_apple_block_size = Configurations.get_apple_block_size()
-        self.image = pygame.Surface((Configurations.get_apple_size(), Configurations.get_apple_size()))
-        self.image.fill(color=Configurations.get_apple_color())
+        #self.image = pygame.Surface((Configurations.get_apple_size(), Configurations.get_apple_size()))
+        #self.image.fill(color=Configurations.get_apple_color())
 
-        #self.image = pygame.Surface()
+        self.image = pygame.image.load("../media/apple1.png")
+        apple_block_size = Configurations.get_apple_size()
+        self.rect = self.image = pygame.transform.scale(self.image, (apple_block_size, apple_block_size))
 
         self.rect = self.image.get_rect()
 

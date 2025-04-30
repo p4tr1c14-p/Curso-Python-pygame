@@ -2,7 +2,7 @@
 Nombre: Patricia Pérez Cruz
 Fecha: 08/04/2025
 Version 08:
--Se verifican coliciones
+-Se verifican colisiones
 """
 import pygame
 
@@ -63,11 +63,11 @@ def run_game() -> None:
             #Se administra el movimiento de la serpiente
             snake_movement(snake_body)
 
-            #Se revisan las coliciones en el juego
+            #Se revisan las colisiones en el juego
             game_over = check_collision(screen, snake_body, apples)
 
             # Se dibujan los elementos gráficos en la pantalla
-            screen_refresh(screen, clock, snake_body, apples, background, apple_img)
+            screen_refresh(screen, clock, snake_body, apples, background)
 
             #Si ha perdido el jugador se llama a la pantalla del fin del juego
             if game_over:

@@ -4,7 +4,7 @@ import pygame
 from Configuration import Configurations
 from Snake  import  SnakeBlock
 from Apple import Apple
-from Media import Background, Applee
+from Media import Background
 
 def game_event() -> bool:
     """
@@ -138,8 +138,7 @@ def screen_refresh(screen: pygame.surface.Surface,
                    clock: pygame.time.Clock,
                    snake_body: pygame.sprite.Group,
                    apples: pygame.sprite.Group,
-                   background: Background,
-                   apple: Applee) -> None:
+                   background: Background) -> None:
     """
     Función que administrar los elementos visuales del juego
     """

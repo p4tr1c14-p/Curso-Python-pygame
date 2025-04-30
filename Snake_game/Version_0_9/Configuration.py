@@ -22,6 +22,11 @@ class Configurations:
     #Las rutas de los archivos multimedia
     _background_image_path = "../media/background_image.jpg"
     _apple_image_path = "../media/apple1.png"
+    _snake_head_image_path = "../media/head1.png"
+    _snake_body_image_path = ["../media/body1.png",
+                          "../media/body2.png",
+                          "../media/body3.png"]
+
 
     @classmethod
     def get_screen_size(cls) -> tuple[int, int]:
@@ -78,5 +83,13 @@ class Configurations:
         return cls._background_image_path
 
     @classmethod
-    def get_apple1_image_path(cls) -> str:
+    def get_apple_image_path(cls) -> str:
         return cls._apple_image_path
+
+    @classmethod
+    def  get_snake_head_image_path(cls) -> str:
+        return cls._snake_head_image_path
+
+    @classmethod
+    def get_snake_body_image_path(cls) -> list:
+        return cls._snake_body_image_path

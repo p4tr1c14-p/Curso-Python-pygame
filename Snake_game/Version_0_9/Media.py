@@ -18,18 +18,22 @@ class Background:
 
     def blit(self, screen: pygame.surface.Surface):
         """
-        Se utliza para dibujar el fondo de pantalla
+        Se utiliza para dibujar el fondo de pantalla
         """
         screen.blit(self.image, self.rect)
 
-class Applee:
+"""class Applee:
     def __init__(self):
-        """ Clase que contiene la manzana. """
+        
+        apple_image_path = Configurations.get_apple1_image_path()
+        self.image = pygame.image.load(apple_image_path)
+        
+
         self.image = pygame.image.load(Configurations.get_apple1_image_path())
         self.rect = self.image.get_rect()
 
     def blit(self, screen: pygame.surface.Surface):
-        screen.blit(self.image, self.rect)
+        screen.blit(self.image, self.rect)"""
 
 """
 
