@@ -16,13 +16,6 @@ class Background:
 
         self.rect = self.image.get_rect()
 
-        #Se escala la manzana 🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎
-        apple_size = Configurations.get_apple_block_size()
-        self.image = pygame.transform.scale(self.image, apple_size)
-
-        self.rect = self.image.get_rect()
-
-
     def blit(self, screen: pygame.surface.Surface):
         """
         Se utliza para dibujar el fondo de pantalla
@@ -31,6 +24,15 @@ class Background:
 
 class Applee:
     def __init__(self):
+        """ Clase que contiene la manzana. """
+        self.image = pygame.image.load(Configurations.get_apple1_image_path())
+        self.rect = self.image.get_rect()
+
+    def blit(self, screen: pygame.surface.Surface):
+        screen.blit(self.image, self.rect)
+
+"""
+
         apple_image_path = Configurations.get_apple1_image_path()
         self.image = pygame.image.load(apple_image_path)
 
@@ -44,7 +46,7 @@ class Applee:
         apple_size = Configurations.get_apple_block_size()
         self.image = pygame.transform.scale(self.image, apple_size)
 
-        self.rect = self.image.get_rect()
+        self.rect = self.image.get_rect()"""
 
 
 

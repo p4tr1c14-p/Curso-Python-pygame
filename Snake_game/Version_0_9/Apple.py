@@ -8,15 +8,15 @@ class Apple(Sprite):
     #Atributo de clase para la puntuación
     _no_apples = 0
 
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__()
 
         Apple._no_apples += 1
        #screen = pygame.display.set_mode(Configurations.get_screen_size())
 
         #_apple_block_size = Configurations.get_apple_block_size()
-        self.image = pygame.Surface((Configurations.get_apple_block_size(), Configurations.get_apple_block_size()))
-        self.image.fill(Configurations.get_apple_color())
+        self.image = pygame.Surface((Configurations.get_apple_size(), Configurations.get_apple_size()))
+        self.image.fill(color=Configurations.get_apple_color())
 
         #self.image = pygame.Surface()
 
@@ -39,10 +39,10 @@ class Apple(Sprite):
             #Se genera la posición aleatoria
             screen_width = Configurations.get_screen_size()[0]
             screen_height = Configurations.get_screen_size()[1]
-            apple_block_size = Configurations.get_apple_block_size()
+            apple_size = Configurations.get_apple_size()
 
-            self.rect.x = apple_block_size * randint(0, (screen_width // apple_block_size - 1))
-            self.rect.y = apple_block_size * randint(0, (screen_height // apple_block_size - 1))
+            self.rect.x = apple_size * randint(0, (screen_width // apple_size - 1))
+            self.rect.y = apple_size * randint(0, (screen_height // apple_size - 1))
 
             #Se verifica que no se encuentre sobre el cuerpo de la serpiente
             for snake_block in snake_body.sprites():
@@ -54,7 +54,7 @@ class Apple(Sprite):
     @classmethod
     def get_no_apples(cls) -> int:
         """
-        Getter: 
+        Getter: para no_apples
         :return:
         """
         return cls._no_apples

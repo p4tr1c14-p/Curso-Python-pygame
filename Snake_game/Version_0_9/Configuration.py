@@ -7,7 +7,7 @@ class Configurations:
     _game_title = "Snake game en pygame"
     #_background = (246, 165, 246)
     _fps = 4 #fps del juego
-    _game_over_screen_time = 2
+    _game_over_screen_time = 1
 
     #Configuraciones de la serpiente
     #Que sea un divisor común con eñ screen size ⬇️
@@ -17,7 +17,7 @@ class Configurations:
 
     #Configuración de la manzana
     _apple_color = (194, 59, 34)
-    _apple_block_size = _snake_block_size
+    _apple_size = _snake_block_size
 
     #Las rutas de los archivos multimedia
     _background_image_path = "../media/background_image.jpg"
@@ -66,9 +66,8 @@ class Configurations:
         return cls._apple_color
 
     @classmethod
-    def get_apple_block_size(cls) -> int:
-        return cls._apple_block_size
-
+    def get_apple_size(cls) -> int:
+        return cls._apple_size
 
     @classmethod
     def get_game_over_screen_time(cls) -> int:

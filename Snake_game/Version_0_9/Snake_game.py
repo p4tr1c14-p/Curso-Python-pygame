@@ -49,6 +49,7 @@ def run_game() -> None:
 
     #Se crea el objeto con el fondo de pantalla
     background = Background()
+    apple_img = Apple()
 
     #Ciclo principal de videojuego
     game_over = False
@@ -66,7 +67,7 @@ def run_game() -> None:
             game_over = check_collision(screen, snake_body, apples)
 
             # Se dibujan los elementos gráficos en la pantalla
-            screen_refresh(screen, clock, snake_body, apples, background)
+            screen_refresh(screen, clock, snake_body, apples, background, apple_img)
 
             #Si ha perdido el jugador se llama a la pantalla del fin del juego
             if game_over:
