@@ -1,3 +1,4 @@
+#import pygame.mixer
 
 class Configurations:
     """
@@ -28,7 +29,7 @@ class Configurations:
                          "../media/apple3.png",
                          "../media/apple4.png"]
 
-    _snake_head_image_path = ["../media/head1.png",
+    _snake_head_image_path = ["../media/head1.png"
                               "../media/head2.png",
                               "../media/head3.png",
                               "../media/head4.png",
@@ -113,4 +114,7 @@ class Configurations:
     def get_time_to_refresh(cls) -> int:
         return cls._time_to_refresh
 
-
+    """@classmethod
+    def play_music(cls, volume) -> None:
+        pygame.mixer.music.play(loops=-1)  # Él -1 indica que se reproduce
+        pygame.mixer.music.set_volume(volume) #En bucle"""
