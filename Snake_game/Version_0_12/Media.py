@@ -114,9 +114,9 @@ class GameOverImage:
         self.rect = self.image.get_rect()
 
     def blit(self, screen: pygame.surface.Surface) -> None:
-        self.rect.centerx = self.get_rect().centerx
+        self.rect.centerx = screen.get_rect().centerx
         self.rect.bottom = screen.get_rect().bottom - Configurations.get_snake_block_size()
-        self.blit(self.image, self.rect)
+        screen.blit(self.image, self.rect)
 
 
 

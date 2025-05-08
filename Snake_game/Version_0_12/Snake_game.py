@@ -11,8 +11,7 @@ from Game_Functionalities import game_event, screen_refresh, snake_movement, che
 from Snake import  SnakeBlock
 from pygame.sprite import Group
 from Apple import Apple
-from Media import Background, Audio, Scoreboard
-
+from Media import Background, Audio, Scoreboard, GameOverImage
 
 def run_game() -> None:
     """
@@ -58,6 +57,7 @@ def run_game() -> None:
     audio.play_star_sound()
 
     scoreboard = Scoreboard()
+    game_over_1 = GameOverImage()
 
 
     #Ciclo principal de videojuego
@@ -81,6 +81,8 @@ def run_game() -> None:
             #Si ha perdido el jugador se llama a la pantalla del fin del juego
             # 🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠
             if game_over:
+                game_over_1.blit(screen)
+                pygame.display.flip()
                 game_over_screen(audio)
 
 

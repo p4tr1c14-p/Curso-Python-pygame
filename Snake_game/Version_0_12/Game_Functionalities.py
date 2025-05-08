@@ -192,8 +192,8 @@ def game_over_screen(audio: Audio) -> None:
     # Se realiza un desvanecimiento de la música y se reproduce el sonido de fin del juego.
     audio.play_game_over_sound()
 
-    game_over_image = GameOverImage()
-    game_over_image.blit(screen)
+ #🍎🤠🍎🤠🍎🤠🍎🤠🍎🤠🍎🤠🍎🤠🍎🤠🍎🤠🍎🤠🍎🤠🍎🤠🍎🤠🍎🤠🍎🤠🍎🤠🍎🤠🍎🤠🍎🤠🍎🤠🍎🤠🍎🤠
+
 
     # Se agrega una pausa para que el usuario se dé cuenta de que ha perdido.
     time.sleep(Configurations.get_game_over_screen_time())
